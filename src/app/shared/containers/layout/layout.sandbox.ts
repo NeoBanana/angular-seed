@@ -29,5 +29,4 @@ export class LayoutSandbox extends Sandbox {
   public toggleSidenav(opened: boolean) {
     this.appState$.dispatch(new layoutActions.ToggleSidenav(opened));
   }
-  }
 }

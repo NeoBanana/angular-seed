@@ -1,5 +1,4 @@
-import * as fromLanguage from "../actions/language.action";
-import { ConfigService } from "../../../app-config.service";
+import * as fromLanguage from '../actions/language.action';
 
 export interface LanguageState {
   selectedLanguage: any;
@@ -9,21 +8,21 @@ export interface LanguageState {
 
 const INITIAL_STATE: LanguageState = {
   selectedLanguage: {
-    code: "pl",
-    name: "PL",
-    culture: "pl-PL"
+    code: 'pl',
+    name: 'PL',
+    culture: 'pl-PL'
   },
-  selectedCulture: "",
+  selectedCulture: '',
   availableLanguages: [
     {
-      code: "pl",
-      name: "PL",
-      culture: "pl-PL"
+      code: 'pl',
+      name: 'PL',
+      culture: 'pl-PL'
     },
     {
-      code: "en",
-      name: "EN",
-      culture: "en-EN"
+      code: 'en',
+      name: 'EN',
+      culture: 'en-EN'
     }
   ]
 };

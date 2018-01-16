@@ -1,1 +1,2 @@
-export * from "./language.selectors";
+export * from './language.selectors';
+export * from './layout.selectors';

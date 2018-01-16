@@ -1,7 +1,7 @@
-import { Injectable } from "@angular/core";
-import { Observable } from "rxjs/Observable";
-import { HttpClient } from "@angular/common/http";
-import { tap, catchError } from "rxjs/operators";
+import { Injectable } from '@angular/core';
+import { Observable } from 'rxjs/Observable';
+import { HttpClient } from '@angular/common/http';
+import { tap, catchError } from 'rxjs/operators';
 @Injectable()
 export class ConfigService {
   private config: Object;
@@ -14,7 +14,7 @@ export class ConfigService {
    */
   load(mode: string) {
     return this.http
-      .get("./assets/config/" + mode + ".json")
+      .get('./assets/config/' + mode + '.json')
       .pipe(
         tap(data => {
           this.config = data;

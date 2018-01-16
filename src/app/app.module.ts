@@ -1,50 +1,50 @@
-import { HttpClient, HttpClientModule } from "@angular/common/http";
-import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
+import { HttpClient, HttpClientModule } from '@angular/common/http';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
-import { BrowserModule } from "@angular/platform-browser";
-import { NgModule, isDevMode, APP_INITIALIZER } from "@angular/core";
-import { FormsModule } from "@angular/forms";
-import { Router } from "@angular/router";
+import { BrowserModule } from '@angular/platform-browser';
+import { NgModule, isDevMode, APP_INITIALIZER } from '@angular/core';
+import { FormsModule } from '@angular/forms';
+import { Router } from '@angular/router';
 
 // Routes
-import { AppRoutingModule } from "./app-routing.module";
+import { AppRoutingModule } from './app-routing.module';
 
 // Services
-import { ConfigService } from "./app-config.service";
+import { ConfigService } from './app-config.service';
 
-import { AppComponent } from "./app.component";
+import { AppComponent } from './app.component';
 
 // Store: not used in production
-import { storeFreeze } from "ngrx-store-freeze";
-import { StoreDevtoolsModule } from "@ngrx/store-devtools";
+import { storeFreeze } from 'ngrx-store-freeze';
+import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 
 // Store
-import { StoreModule, MetaReducer } from "@ngrx/store";
-import { EffectsModule } from "@ngrx/effects";
+import { StoreModule, MetaReducer } from '@ngrx/store';
+import { EffectsModule } from '@ngrx/effects';
 
-import { reducers, effects, CustomSerializer } from "./shared/store";
+import { reducers, effects, CustomSerializer } from './shared/store';
 export const metaReducers: MetaReducer<any>[] = isDevMode()
   ? [storeFreeze]
   : [];
 
 // FalseDatabase
-import { HttpClientInMemoryWebApiModule } from "angular-in-memory-web-api";
-import { InMemoryDataService } from "./dev/in-memory-data.service";
+import { HttpClientInMemoryWebApiModule } from 'angular-in-memory-web-api';
+import { InMemoryDataService } from './dev/in-memory-data.service';
 
 // Translate
-import { TranslateModule, TranslateLoader } from "@ngx-translate/core";
-import { TranslateHttpLoader } from "@ngx-translate/http-loader";
+import { TranslateModule, TranslateLoader } from '@ngx-translate/core';
+import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 export function HttpLoaderFactory(http: HttpClient) {
   return new TranslateHttpLoader(http);
 }
 // Third party libraries
 
-import { MaterialModule } from "./shared/modules/material.module";
+import { MaterialModule } from './shared/modules/material.module';
 
-import { ComponentsModule } from "./shared/components/components.module";
-import { ContainersModule } from "./shared/containers/containers.module";
-import { AppSandbox } from "./app.sandox";
-import { HttpModule } from "@angular/http";
+import { ComponentsModule } from './shared/components/components.module';
+import { ContainersModule } from './shared/containers/containers.module';
+import { AppSandbox } from './app.sandox';
+import { HttpModule } from '@angular/http';
 
 export const devModeModules: any[] = isDevMode()
   ? [
@@ -58,7 +58,7 @@ export const devModeModules: any[] = isDevMode()
   : [];
 export function configServiceFactory(config: ConfigService) {
   return () =>
-    isDevMode() ? config.load("development") : config.load("production");
+    isDevMode() ? config.load('development') : config.load('production');
 }
 export const Components = [AppComponent];
 @NgModule({

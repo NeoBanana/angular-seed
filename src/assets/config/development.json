@@ -8,14 +8,12 @@
       {
         "code": "pl",
         "name": "PL",
-        "culture": "pl-PL",
-        "src": "assets/flags/pl-flag.png"
+        "culture": "pl-PL"
       },
       {
         "code": "en",
         "name": "EN",
-        "culture": "en-EN",
-        "src": "assets/flags/en-flag.png"
+        "culture": "en-EN"
       }
     ],
     "defaultLanguage": "pl"

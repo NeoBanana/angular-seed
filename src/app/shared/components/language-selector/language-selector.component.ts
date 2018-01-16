@@ -6,12 +6,12 @@ import {
   ChangeDetectionStrategy,
   ElementRef,
   OnInit
-} from "@angular/core";
-import { Observable } from "rxjs/Observable";
+} from '@angular/core';
+import { Observable } from 'rxjs/Observable';
 
 @Component({
-  selector: "language-selector",
-  templateUrl: "./language-selector.component.html",
+  selector: 'language-selector',
+  templateUrl: './language-selector.component.html',
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class LanguageSelectorComponent implements OnInit {
@@ -33,9 +33,5 @@ export class LanguageSelectorComponent implements OnInit {
 
   ngOnInit(): void {
     this.lang = this.selectedLanguage;
-  }
-
-  public selectLanguage() {
-    this.select.emit(this.lang);
   }
 }

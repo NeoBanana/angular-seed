@@ -1,0 +1,11 @@
+{
+  "HOME": {
+    "TITLE": "Witaj  w {{value}}",
+    "HELPFUL": "Tutaj masz troche pomocnych linków aby zacząć:"
+  },
+  "MENU": {
+    "EXAMPLE": "przykladowy tekst w menu"
+  },
+
+  "LANGUAGE": "jezyk"
+}

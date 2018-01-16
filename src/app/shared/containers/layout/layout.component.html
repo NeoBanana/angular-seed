@@ -1,0 +1,17 @@
+<mat-sidenav-container class="fullPageSidenav">
+  <mat-sidenav #sidenav mode="over" opened="true" [ngClass.gt-md]="{'sidenav-desktop':true}" [ngClass.lt-lg]="{'sidenav-mobile':true}"
+    [fixedInViewport]="true">
+    <app-navigation></app-navigation>
+
+  </mat-sidenav>
+  <mat-sidenav-content>
+    <app-header (selectLanguage)="layoutSandbox.selectLanguage($event)" (openSidenav)="sidenav.toggle()" [selectedLanguage]="layoutSandbox.selectedLang$ | async"
+      [availableLanguages]="layoutSandbox.availableLanguages$ | async">
+
+    </app-header>
+
+    <ng-content></ng-content>
+
+  </mat-sidenav-content>
+
+</mat-sidenav-container>

@@ -1,0 +1,25 @@
+{
+  "api": {
+    "baseUrl": "/api"
+  },
+
+  "localization": {
+    "languages": [
+      {
+        "code": "pl",
+        "name": "PL",
+        "culture": "pl-PL",
+        "src": "assets/flags/pl-flag.png"
+      },
+      {
+        "code": "en",
+        "name": "EN",
+        "culture": "en-EN",
+        "src": "assets/flags/en-flag.png"
+      }
+    ],
+    "defaultLanguage": "pl"
+  },
+
+  "debugging": true
+}

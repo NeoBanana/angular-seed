@@ -1,28 +1,33 @@
-import { Injectable } from "@angular/core";
-import { Router } from "@angular/router";
-import { Location } from "@angular/common";
+import { Injectable } from '@angular/core';
+import { Router } from '@angular/router';
+import { Location } from '@angular/common';
 
-import { Effect, Actions } from "@ngrx/effects";
-import * as RouterActions from "../actions/router.action";
+import { Effect, Actions } from '@ngrx/effects';
+import * as RouterActions from '../actions/router.action';
 
-import { tap, map } from "rxjs/operators";
+import { Store } from '@ngrx/store';
+import * as fromStore from '../../store';
+import * as languageActions from '../../store/actions/language.action';
+import * as layoutActions from '../../store/actions/layout.action';
+
+import { tap, map } from 'rxjs/operators';
 
 @Injectable()
 export class RouterEffects {
   constructor(
     private actions$: Actions,
     private router: Router,
-    private location: Location
+    private location: Location,
+    private $appState: Store<fromStore.AppState>
   ) {}
 
-  @Effect({ dispatch: false })
+  @Effect()
   navigate$ = this.actions$.ofType(RouterActions.GO).pipe(
     map((action: RouterActions.Go) => action.payload),
     tap(({ path, query: queryParams, extras }) => {
       this.router.navigate(path, { queryParams, ...extras });
     })
   );
-
   @Effect({ dispatch: false })
   navigateBack$ = this.actions$
     .ofType(RouterActions.BACK)

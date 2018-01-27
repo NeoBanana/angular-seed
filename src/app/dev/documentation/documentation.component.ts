@@ -7,10 +7,9 @@ import { Tool } from './tool.model';
 @Component({
   selector: 'dev-documentation',
   template: `
-    <app-layout>
 
       <list-tool [toolList]="list"></list-tool>
-    </app-layout>
+
   `,
   styles: [],
   changeDetection: ChangeDetectionStrategy.OnPush

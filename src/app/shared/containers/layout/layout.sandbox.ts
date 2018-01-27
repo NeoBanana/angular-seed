@@ -28,6 +28,9 @@ export class LayoutSandbox {
   public toggleSidenav(opened: boolean) {
     this.appState$.dispatch(new layoutActions.ToggleSidenav(opened));
   }
+  public closeSidenav() {
+    this.appState$.dispatch(new layoutActions.CloseSidenav(false));
+  }
   public loadSponsors(): Array<any> {
     return [
       {

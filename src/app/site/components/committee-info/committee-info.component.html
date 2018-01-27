@@ -1,0 +1,47 @@
+<mat-card>
+  <mat-card-title>
+    {{committee.region}}
+  </mat-card-title>
+  <mat-card-content>
+
+    Adress
+
+    <b>{{ committee.address.name }}</b>
+    <br />
+    <br /> {{ committee.address.street}}
+    <br /> {{ committee.address.postcode}} {{ committee.address.city}} Przewodnicący
+
+    <b>{{committee.moderator.title}}</b> {{committee.moderator.firstname}} {{committee.moderator.surname}}
+    <br />
+    <br />
+    <mat-list>
+      <h4 mat-header>Kontakt</h4>
+      <mat-list-item *ngIf="committee.moderator.email">
+        <mat-icon mat-list-icon>mail</mat-icon>
+        <h4 mat-line>Email:</h4>
+        <p mat-line>
+          <a href="mailto:{{committee.moderator.email}}">{{committee.moderator.email}}</a>
+        </p>
+      </mat-list-item>
+      <mat-list-item *ngIf="committee.moderator.tel">
+        <mat-icon mat-list-icon>phone</mat-icon>
+        <h4 mat-line>Telefon:</h4>
+        <p mat-line> {{committee.moderator.tel}}</p>
+      </mat-list-item>
+      <mat-list-item *ngIf="committee.moderator.fax">
+        <mat-icon mat-list-icon>print</mat-icon>
+        <h4 mat-line>Fax:</h4>
+        <p mat-line> {{committee.moderator.fax}}</p>
+      </mat-list-item>
+      <mat-list-item *ngIf="committee.moderator.www">
+        <mat-icon mat-list-icon>language</mat-icon>
+        <h4 mat-line>www:</h4>
+        <p mat-line>
+          <a href="http://{{committee.moderator.www}}">{{committee.moderator.www}}</a>
+        </p>
+      </mat-list-item>
+    </mat-list>
+
+
+  </mat-card-content>
+</mat-card>

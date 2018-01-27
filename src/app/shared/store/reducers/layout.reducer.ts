@@ -18,6 +18,9 @@ export function reducer(
     case fromLayout.ActionTypes.TOGGLE_SIDENAV: {
       return { ...state, showSidenav: action.payload };
     }
+    case fromLayout.ActionTypes.CLOSE_SIDENAV: {
+      return { ...state, showSidenav: false };
+    }
     case fromLayout.ActionTypes.CHANGE_PAGE_NAME: {
       return { ...state, pageName: action.payload };
     }

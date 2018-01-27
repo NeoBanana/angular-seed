@@ -5,3 +5,14 @@
 .sidenav-mobile {
     width: 70%;
 }
+
+div {
+    margin: 10px;
+    max-width: 1920px;
+}
+
+@media screen and (min-width:1920px) {
+    div {
+        margin: auto;
+    }
+}

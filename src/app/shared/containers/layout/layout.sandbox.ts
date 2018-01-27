@@ -27,4 +27,34 @@ export class LayoutSandbox {
   public toggleSidenav(opened: boolean) {
     this.appState$.dispatch(new layoutActions.ToggleSidenav(opened));
   }
+  public loadSponsors(): Array<any> {
+    return [
+      {
+        name: 'Polskie Towarzystwo Matematyczne',
+        href: 'http://www.ptm.org.pl/',
+        src: 'http://www.mbg.uz.zgora.pl/ptm-logo-150.png'
+      },
+      {
+        name: 'Matematyka Bez Granic',
+        href: 'http://www.mbg.uz.zgora.pl',
+        src: 'http://www.mbg.uz.zgora.pl/logo.php'
+      },
+      {
+        name: 'Polskie Towarzystwo Matematyczne',
+        href: 'http://www.ptm.org.pl/',
+        src:
+          'https://hdwallsource.com/img/2014/7/large-40566-41516-hd-wallpapers.jpg'
+      },
+      {
+        name: 'Polskie Towarzystwo Matematyczne',
+        href: 'http://www.ptm.org.pl/',
+        src: 'http://www.mbg.uz.zgora.pl/ptm-logo-150.png'
+      },
+      {
+        name: 'Polskie Towarzystwo Matematyczne',
+        href: 'http://www.ptm.org.pl/',
+        src: 'http://www.mbg.uz.zgora.pl/ptm-logo-150.png'
+      }
+    ];
+  }
 }

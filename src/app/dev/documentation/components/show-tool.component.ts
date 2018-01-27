@@ -17,7 +17,7 @@ import {
   `,
   styles: [
     `mat-card{
-    margin:10px;
+    margin: 10px 0;
   }
   `
   ],

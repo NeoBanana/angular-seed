@@ -8,7 +8,10 @@ import { Tool } from './tool.model';
   selector: 'dev-documentation',
   template: `
     <app-layout>
+    <mat-card>
+    <mat-toolbar color="primary">Documentation</mat-toolbar>
       <list-tool [toolList]="list"></list-tool>
+      </mat-card>
     </app-layout>
   `,
   styles: [],

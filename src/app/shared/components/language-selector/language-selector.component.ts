@@ -12,6 +12,11 @@ import { Observable } from 'rxjs/Observable';
 @Component({
   selector: 'language-selector',
   templateUrl: './language-selector.component.html',
+  styles: [
+    `
+
+`
+  ],
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class LanguageSelectorComponent implements OnInit {

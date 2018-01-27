@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { Sandbox } from './shared/sandbox/base.sandbox';
+
 import { Store } from '@ngrx/store';
 import * as fromStore from './shared/store';
 import * as languageActions from './shared/store/actions/language.action';
@@ -7,14 +7,12 @@ import { TranslateService } from '@ngx-translate/core';
 import { ConfigService } from './app-config.service';
 
 @Injectable()
-export class AppSandbox extends Sandbox {
+export class AppSandbox {
   constructor(
     protected $appState: Store<fromStore.AppState>,
     private translate: TranslateService,
     private configService: ConfigService
-  ) {
-    super($appState);
-  }
+  ) {}
 
   /**
    * Sets up default language for the application. Uses browser default language.

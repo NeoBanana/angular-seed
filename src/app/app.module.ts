@@ -1,5 +1,6 @@
 import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { AppComponent } from './app.component';
 
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule, isDevMode, APP_INITIALIZER } from '@angular/core';
@@ -12,16 +13,17 @@ import { AppRoutingModule } from './app-routing.module';
 // Services
 import { ConfigService } from './app-config.service';
 
-import { AppComponent } from './app.component';
-
 // Store: not used in production
 import { storeFreeze } from 'ngrx-store-freeze';
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 
 // Store
+import {
+  StoreRouterConnectingModule,
+  RouterStateSerializer
+} from '@ngrx/router-store';
 import { StoreModule, MetaReducer } from '@ngrx/store';
 import { EffectsModule } from '@ngrx/effects';
-
 import { reducers, effects, CustomSerializer } from './shared/store';
 export const metaReducers: MetaReducer<any>[] = isDevMode()
   ? [storeFreeze]
@@ -41,6 +43,7 @@ export function HttpLoaderFactory(http: HttpClient) {
 
 import { MaterialModule } from './shared/modules/material.module';
 
+// App modules/components
 import { ComponentsModule } from './shared/components/components.module';
 import { ContainersModule } from './shared/containers/containers.module';
 import { AppSandbox } from './app.sandox';
@@ -74,6 +77,7 @@ export const Components = [AppComponent];
     BrowserAnimationsModule,
     StoreModule.forRoot(reducers, { metaReducers }),
     EffectsModule.forRoot(effects),
+    StoreRouterConnectingModule,
     HttpClientModule,
     TranslateModule.forRoot({
       loader: {
@@ -87,6 +91,7 @@ export const Components = [AppComponent];
   ],
 
   providers: [
+    { provide: RouterStateSerializer, useClass: CustomSerializer },
     ConfigService,
     {
       provide: APP_INITIALIZER,

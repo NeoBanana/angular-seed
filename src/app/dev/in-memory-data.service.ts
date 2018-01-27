@@ -1,4 +1,4 @@
-import { InMemoryDbService } from "angular-in-memory-web-api";
+import { InMemoryDbService } from 'angular-in-memory-web-api';
 /**
  * This is an example of a Hero-oriented InMemoryDbService.
  *
@@ -9,29 +9,24 @@ import { InMemoryDbService } from "angular-in-memory-web-api";
  * Add the following line to `AppModule.imports`
  *   InMemoryWebApiModule.forRoot(HeroInMemDataService) // or HeroInMemDataOverrideService
  */
-import { Injectable } from "@angular/core";
+import { Injectable } from '@angular/core';
 
 // tslint:disable:no-unused-variable
-import { Observable } from "rxjs/Observable";
-import { of } from "rxjs/observable/of";
-import "rxjs/add/operator/delay";
+import { Observable } from 'rxjs/Observable';
+import { of } from 'rxjs/observable/of';
+import 'rxjs/add/operator/delay';
 // tslint:enable:no-unused-variable
 @Injectable()
 export class InMemoryDataService implements InMemoryDbService {
   createDb() {
-    const users = [
+    const tools = [
       {
         id: 1,
-        name: "admin",
-        role: "admin"
-      },
-      {
-        id: 2,
-        name: "user",
-        role: "user"
+        title: 'admin',
+        body: 'admin'
       }
     ];
-    const db = { users };
+    const db = { tools };
 
     return db;
   }

@@ -1,33 +1,29 @@
 <mat-card>
-
   <mat-toolbar color="primary">
-    terminarz
+    {{ 'WIDGET.CALENDAR.TITLE' | translate}}
   </mat-toolbar>
-
-
   <mat-card-content>
-
-    <b>Terminarz XXIX MK "MBG" wersja Senior edycja (2017/2018)</b>
+    <b> {{ 'WIDGET.CALENDAR.VERSION_SENIOR' | translate :{name:"XXIX MK ",year:"2017/2018"} }}</b>
     <br />
     <br />
-    <br /> zgłoszenie uczestnictwa: od października do grudnia 2017 roku
-    <br /> etap wstępny (wewnątrzszkolny): styczeń – 25 luty 2018 roku
-    <br /> etap finałowy: 27 luty 2018 roku
+    <br /> {{ 'WIDGET.CALENDAR.SIGNIN' | translate :{time:" od października do grudnia 2017 roku"} }}
+    <br /> {{ 'WIDGET.CALENDAR.PRELIMINARY' | translate :{time:"styczeń – 26 luty 2018 roku"} }}
+    <br /> {{ 'WIDGET.CALENDAR.FINALE' | translate :{time:"27 luty 2018 roku"} }}
     <br />
     <br />
-    <b>Terminarz MK "MBG" wersja Junior edycja (2017/2018)</b>
+    <b>{{ 'WIDGET.CALENDAR.VERSION_SENIOR' | translate :{name:"MK ",year:"2017/2018"} }}</b>
     <br />
-    <br /> zgłoszenie uczestnictwa: od października do grudnia 2017 roku
-    <br /> etap wstępny (wewnątrzszkolny): styczeń – 26 luty 2018 roku
-    <br /> etap finałowy: 28 luty 2018 roku
+    <br /> {{ 'WIDGET.CALENDAR.SIGNIN' | translate :{time:" od października do grudnia 2017 roku"} }}
+    <br /> {{ 'WIDGET.CALENDAR.PRELIMINARY' | translate :{time:"styczeń – 26 luty 2018 roku"} }}
+    <br /> {{ 'WIDGET.CALENDAR.PRELIMINARY' | translate :{time:"styczeń – 26 luty 2018 roku"} }}
+    <br /> {{ 'WIDGET.CALENDAR.FINALE' | translate :{time:"28 luty 2018 roku"} }}
     <br />
-    <br /> maj – czerwiec: wręczenie nagród i dyplomów laureatom konkursu.
+    <br /> {{ 'WIDGET.CALENDAR.AWARDS' | translate :{time:"maj – czerwiec"} }}
     <br />
-
+    <br />
   </mat-card-content>
   <mat-card-actions>
-    <a mat-raised-button color="accent" mat-size2 routerLink="/formularz" class="fullWidth">
-      <mat-icon aria-hidden="true">create</mat-icon>Formularz Zgłoszeniowy </a>
-
+    <a mat-raised-button color="accent" mat-size2 routerLink="/formularz" fxFlex="100">
+      <mat-icon aria-hidden="true">create</mat-icon>{{ 'WIDGET.CALENDAR.FORM' | translate}}</a>
   </mat-card-actions>
 </mat-card>

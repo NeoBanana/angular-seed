@@ -6,6 +6,21 @@
   "MENU": {
     "EXAMPLE": "przykładowy tekst w menu"
   },
+  "WIDGET": {
+    "CALENDAR": {
+      "TITLE": "Terminarz",
+      "VERSION_SENIOR":
+        "Terminarz {{name}} \"MBG\" wersja Senior edycja ({{year}})",
+      "VERSION_JUNIOR":
+        "Terminarz {{name}} \"MBG\" wersja Junior edycja ({{year}})",
+      "SIGNIN": "zgłoszenie uczestnictwa: {{time}}",
+      "PRELIMINARY": "etap wstępny (wewnątrzszkolny): {{time}}",
+      "FINALE": "etap finałowy: ",
+      "AWARDS": "{{time}}: wręczenie nagród i dyplomów laureatom konkursu.",
+      "FORM": "Formularz Zgłoszeniowy"
+    },
+    "SPONSORS": "Konkursowi patronuje i wspiera"
+  },
 
   "LANGUAGE": "jezyk"
 }

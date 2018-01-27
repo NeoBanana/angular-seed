@@ -4,20 +4,26 @@
     <app-navigation></app-navigation>
 
   </mat-sidenav>
-  <mat-sidenav-content fxLayout="column" fxLayoutGap="10px">
-    <layout-header (selectLanguage)="layoutSandbox.selectLanguage($event)" (openSidenav)="sidenav.toggle()" [selectedLanguage]="layoutSandbox.$selectedLang | async"
-      [availableLanguages]="layoutSandbox.$availableLanguages | async">
 
-    </layout-header>
-    <div fxLayout.gt-md="row wrap" fxLayout.lt-lg="column" fxLayoutGap="10px" class="container">
-      <main fxFlex>
-        <ng-content></ng-content>
-      </main>
-      <aside fxFlex="30" fxLayout="column" fxLayoutGap="10px">
-        <layout-calendar></layout-calendar>
-        <layout-sponsors [sponsors]="layoutSandbox.loadSponsors()"></layout-sponsors>
-      </aside>
-    </div>
-  </mat-sidenav-content>
+  <layout-header (selectLanguage)="layoutSandbox.selectLanguage($event)" (openSidenav)="sidenav.toggle()" [selectedLanguage]="layoutSandbox.$selectedLang | async"
+    [availableLanguages]="layoutSandbox.$availableLanguages | async">
 
+  </layout-header>
+  <div fxLayout.gt-md="row wrap" fxLayout.lt-lg="column" fxLayoutGap="10px" class="container">
+    <main fxFlex>
+      <mat-card>
+        <mat-toolbar color="primary">{{layoutSandbox.$pageName | async}}</mat-toolbar>
+        <mat-card-content>
+          <ng-content></ng-content>
+        </mat-card-content>
+      </mat-card>
+    </main>
+    <aside fxFlex="30" fxLayout="column" fxLayoutGap="10px">
+      <layout-calendar></layout-calendar>
+      <layout-sponsors [sponsors]="layoutSandbox.loadSponsors()"></layout-sponsors>
+    </aside>
+  </div>
+  <div class="flex-spacer"></div>
+
+  <layout-footer></layout-footer>
 </mat-sidenav-container>

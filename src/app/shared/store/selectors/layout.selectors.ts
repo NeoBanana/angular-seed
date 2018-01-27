@@ -9,3 +9,7 @@ export const getShowSidenav = createSelector(
   getLayoutState,
   fromLayout.getShowSidenav
 );
+export const getPageName = createSelector(
+  getLayoutState,
+  fromLayout.getPageName
+);

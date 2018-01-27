@@ -1,10 +1,15 @@
 import { Injectable } from '@angular/core';
-import { Store } from '@ngrx/store';
 import { Subscription } from 'rxjs';
 import { Tool } from './tool.model';
-
+import { Store } from '@ngrx/store';
+import * as fromStore from '../../shared/store';
+import * as layoutActions from '../../shared/store/actions/layout.action';
 @Injectable()
 export class DocumentationSandbox {
+  constructor(protected appState$: Store<fromStore.AppState>) {
+    this.appState$.dispatch(new layoutActions.ChangePageName('Documentation'));
+  }
+
   public loadTools(): Tool[] {
     const list = [
       {

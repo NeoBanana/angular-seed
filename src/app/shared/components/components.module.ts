@@ -15,6 +15,7 @@ import { MaterialModule } from '../modules/material.module';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { CalendarComponent } from './calendar/calendar.component';
 import { SponsorsComponent } from './sponsors/sponsors.component';
+import { FooterComponent } from './footer/footer.component';
 
 // import { PageNotFoundComponent } from "./pageNotFound/pageNotFound.component";
 
@@ -23,6 +24,7 @@ export const COMPONENTS = [
   NavigationComponent,
   // ProfileActionBarComponent,
   HeaderComponent,
+  FooterComponent,
 
   LanguageSelectorComponent,
   CalendarComponent,

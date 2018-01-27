@@ -14,6 +14,7 @@ export class LayoutSandbox {
     fromStore.getAvailableLanguages
   );
   public $showSidenav = this.appState$.select(fromStore.getShowSidenav);
+  public $pageName = this.appState$.select(fromStore.getPageName);
   constructor(
     protected appState$: Store<fromStore.AppState>,
     private translateService: TranslateService,

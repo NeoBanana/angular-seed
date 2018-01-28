@@ -16,6 +16,7 @@ import { CommitteeListComponent } from './containers/committee-list/committee-li
 import { SearchComponent } from './components/search/search.component';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { FormsModule } from '@angular/forms';
+import { SearchPipe } from '../shared/pipes/search.pipe';
 
 @NgModule({
   imports: [
@@ -36,7 +37,9 @@ import { FormsModule } from '@angular/forms';
     InfoComponent,
     CommitteeInfoComponent,
     CommitteeListComponent,
-    SearchComponent
-  ]
+    SearchComponent,
+    SearchPipe
+  ],
+  providers: []
 })
 export class SiteModule {}

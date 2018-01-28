@@ -1,2 +1,2 @@
-<app-search></app-search>
-<app-committee-list [list]="sandbox.loadCommittees()" fxLayout="row wrap" fxLayoutGap="10px"></app-committee-list>
+<app-search (search)="search($event)"></app-search>
+<app-committee-list [list]="sandbox.loadCommittees()" [search]="$querry |async" fxLayout="row wrap" fxLayoutGap="10px"></app-committee-list>

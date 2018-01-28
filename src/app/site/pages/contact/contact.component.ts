@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ContactSandbox } from './contact.sandbox';
+import { of } from 'rxjs/observable/of';
+import { Observable } from 'rxjs/Observable';
 
 @Component({
   selector: 'app-contact',
@@ -7,8 +9,10 @@ import { ContactSandbox } from './contact.sandbox';
   styleUrls: ['./contact.component.scss'],
   providers: [ContactSandbox]
 })
-export class ContactComponent implements OnInit {
+export class ContactComponent {
   constructor(private sandbox: ContactSandbox) {}
-
-  ngOnInit() {}
+  $querry: Observable<string> = of('');
+  search(querry) {
+    this.$querry = of(querry);
+  }
 }

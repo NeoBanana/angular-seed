@@ -1,0 +1,13 @@
+<button mat-raised-button color="primary" routerLink="/" (click)="activate.emit()">
+  <mat-icon>home</mat-icon>
+</button>
+Edycje
+
+<a mat-raised-button color="primary" href="http://www.mbg.uz.zgora.pl/">poprzednie edycje</a>
+<button mat-raised-button color="primary" routerLink="/edycja/1" routerLinkActive="mat-accent" (click)="activate.emit()">edycja</button>
+Informacje
+
+<button mat-raised-button color="primary" routerLink="/info/ogolne" routerLinkActive="mat-accent" (click)="activate.emit()">O konkursie</button>
+<button mat-raised-button color="primary" routerLink="/info/regulaminy" routerLinkActive="mat-accent" (click)="activate.emit()">Regulaminy i Zasady</button>
+
+<button mat-raised-button color="primary" routerLink="/contact" routerLinkActive="mat-accent" (click)="activate.emit()">Dane Komitetow</button>

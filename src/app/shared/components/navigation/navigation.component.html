@@ -1,13 +1,16 @@
-<button mat-raised-button color="primary" routerLink="/" (click)="activate.emit()">
+<button mat-raised-button color="primary" routerLink="/">
   <mat-icon>home</mat-icon>
 </button>
-Edycje
-
-<a mat-raised-button color="primary" href="http://www.mbg.uz.zgora.pl/">poprzednie edycje</a>
-<button mat-raised-button color="primary" routerLink="/edycja/1" routerLinkActive="mat-accent" (click)="activate.emit()">edycja</button>
-Informacje
-
-<button mat-raised-button color="primary" routerLink="/info/ogolne" routerLinkActive="mat-accent" (click)="activate.emit()">O konkursie</button>
-<button mat-raised-button color="primary" routerLink="/info/regulaminy" routerLinkActive="mat-accent" (click)="activate.emit()">Regulaminy i Zasady</button>
-
-<button mat-raised-button color="primary" routerLink="/contact" routerLinkActive="mat-accent" (click)="activate.emit()">Dane Komitetow</button>
+<button mat-raised-button color="primary" [matMenuTriggerFor]="edycje" routerLinkActive="mat-accent" [routerLinkActiveOptions]="{exact: true}">Edycje
+  <mat-menu #edycje="matMenu">
+    <a mat-menu-item href="http://www.mbg.uz.zgora.pl/">poprzednie edycje</a>
+    <button mat-menu-item *ngFor="let edition of editions" routerLink="/edycja/{{edition.id}}" routerLinkActive="menu__link--active">{{edition.nazwa}}</button>
+  </mat-menu>
+</button>
+<button mat-raised-button color="primary" [matMenuTriggerFor]="info" routerLinkActive="mat-accent" [routerLinkActiveOptions]="{exact: true}">Informacje
+  <mat-menu #info="matMenu">
+    <button mat-menu-item routerLink="/info/ogolne" routerLinkActive="menu__link--active">O konkursie</button>
+    <button mat-menu-item routerLink="/info/regulaminy" routerLinkActive="menu__link--active">Regulaminy i Zasady</button>
+  </mat-menu>
+</button>
+<button mat-raised-button color="primary" routerLink="/contact" routerLinkActive="mat-accent">Dane Komitetow</button>

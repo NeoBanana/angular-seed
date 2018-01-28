@@ -16,11 +16,13 @@ import { FlexLayoutModule } from '@angular/flex-layout';
 import { CalendarComponent } from './calendar/calendar.component';
 import { SponsorsComponent } from './sponsors/sponsors.component';
 import { FooterComponent } from './footer/footer.component';
+import { SidenavNavigationComponent } from './sidenav-navigation/sidenav-navigation.component';
 
 // import { PageNotFoundComponent } from "./pageNotFound/pageNotFound.component";
 
 export const COMPONENTS = [
   // SpinnerComponent,
+  SidenavNavigationComponent,
   NavigationComponent,
   // ProfileActionBarComponent,
   HeaderComponent,

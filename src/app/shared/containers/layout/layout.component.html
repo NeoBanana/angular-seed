@@ -1,7 +1,7 @@
 <mat-sidenav-container fullscreen>
   <mat-sidenav #sidenav mode="over" [opened]="layoutSandbox.$showSidenav | async" [ngClass.gt-md]="{'sidenav-desktop':true}"
     [ngClass.lt-lg]="{'sidenav-mobile':true}" [fixedInViewport]="true" (openedChange)="layoutSandbox.toggleSidenav($event)">
-    <app-navigation (activate)="layoutSandbox.closeSidenav()"></app-navigation>
+    <app-sidenav-navigation (activate)="layoutSandbox.closeSidenav()"></app-sidenav-navigation>
 
   </mat-sidenav>
 

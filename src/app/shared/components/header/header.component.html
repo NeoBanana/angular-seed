@@ -1,21 +1,22 @@
 <mat-toolbar color="primary">
-  <button mat-icon-button (click)="openSidenav.emit($event)">
+  <button mat-icon-button (click)="openSidenav.emit($event)" fxShow.gt-md="false">
     <mat-icon>menu</mat-icon>
   </button>
+  <app-navigation fxShow.lt-lg="false"></app-navigation>
 
-  <div class="flex-spacer"></div>My App
-  <div class="flex-spacer"></div>
+  <div class=" flex-spacer "></div>My App
+  <div class="flex-spacer "></div>
 
 </mat-toolbar>
 
-<div class="header__wrap">
-  <a href="#wmie">
-    <img src="../../../assets/images/logo_wmie.gif" alt="" class="left">
+<div class="header__wrap ">
+  <a href="#wmie ">
+    <img src="../../../assets/images/logo_wmie.gif " alt=" " class="left ">
   </a>
-  <h1 class="header__column-center">Krajowy Komitet Organizacyjny
+  <h1 class="header__column-center ">Krajowy Komitet Organizacyjny
     <br /> Międzynarodowego Konkursu
-    <br /> "Matematyka Bez Granic"</h1>
-  <a href="#uz">
-    <img src="../../../assets/images/logo_uz.gif" alt="" class="right">
+    <br /> "Matematyka Bez Granic "</h1>
+  <a href="#uz ">
+    <img src="../../../assets/images/logo_uz.gif " alt=" " class="right ">
   </a>
 </div>

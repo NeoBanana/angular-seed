@@ -5,6 +5,7 @@ import { Store } from '@ngrx/store';
 import * as fromStore from '../../store';
 import * as languageActions from '../../store/actions/language.action';
 import * as layoutActions from '../../store/actions/layout.action';
+import * as sponsorsActions from '../../store/actions/sponsors.action';
 import { TranslateService } from '@ngx-translate/core';
 
 @Injectable()
@@ -17,12 +18,18 @@ export class LayoutSandbox {
   public $showRightSidenav = this.appState$.select(
     fromStore.getShowRightSidenav
   );
+
   public $pageName = this.appState$.select(fromStore.getPageName);
+
+  public $sponsors = this.appState$.select(fromStore.getAllSponsors);
+
   constructor(
     protected appState$: Store<fromStore.AppState>,
     private translateService: TranslateService,
     private router: Router
-  ) {}
+  ) {
+    this.appState$.dispatch(new sponsorsActions.LoadSponsorsAction());
+  }
 
   public selectLanguage(lang: any): void {
     this.appState$.dispatch(new languageActions.SetLanguageAction(lang));

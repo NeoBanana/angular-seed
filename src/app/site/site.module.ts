@@ -22,6 +22,7 @@ import { ParticipantListComponent } from './containers/participant-list/particip
 import { ParticipantInfoComponent } from './components/participant-info/participant-info.component';
 import { EditionResultComponent } from './components/edition-result/edition-result.component';
 import { EditionStatisticComponent } from './components/edition-statistic/edition-statistic.component';
+import { LoginComponent } from './pages/login/login.component';
 
 @NgModule({
   imports: [
@@ -50,7 +51,8 @@ import { EditionStatisticComponent } from './components/edition-statistic/editio
     ParticipantListComponent,
     ParticipantInfoComponent,
     EditionResultComponent,
-    EditionStatisticComponent
+    EditionStatisticComponent,
+    LoginComponent
   ],
   providers: []
 })

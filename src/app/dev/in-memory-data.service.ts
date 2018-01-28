@@ -74,27 +74,32 @@ export class InMemoryDataService implements InMemoryDbService {
 
     const sponsors = [
       {
+        id: 1,
         name: 'Polskie Towarzystwo Matematyczne',
         href: 'http://www.ptm.org.pl/',
         src: 'http://www.mbg.uz.zgora.pl/ptm-logo-150.png'
       },
       {
+        id: 2,
         name: 'Matematyka Bez Granic',
         href: 'http://www.mbg.uz.zgora.pl',
         src: 'http://www.mbg.uz.zgora.pl/logo.php'
       },
       {
+        id: 3,
         name: 'Polskie Towarzystwo Matematyczne',
         href: 'http://www.ptm.org.pl/',
         src:
           'https://hdwallsource.com/img/2014/7/large-40566-41516-hd-wallpapers.jpg'
       },
       {
+        id: 4,
         name: 'Polskie Towarzystwo Matematyczne',
         href: 'http://www.ptm.org.pl/',
         src: 'http://www.mbg.uz.zgora.pl/ptm-logo-150.png'
       },
       {
+        id: 5,
         name: 'Polskie Towarzystwo Matematyczne',
         href: 'http://www.ptm.org.pl/',
         src: 'http://www.mbg.uz.zgora.pl/ptm-logo-150.png'

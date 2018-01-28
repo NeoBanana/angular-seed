@@ -17,19 +17,19 @@ export function reducer(
   action: fromLayout.LayoutActions
 ): LayoutState {
   switch (action.type) {
-    case fromLayout.ActionTypes.TOGGLE_LEFT_SIDENAV: {
+    case fromLayout.LayoutActionTypes.TOGGLE_LEFT_SIDENAV: {
       return { ...state, showLeftSidenav: action.payload };
     }
-    case fromLayout.ActionTypes.CLOSE_LEFT_SIDENAV: {
+    case fromLayout.LayoutActionTypes.CLOSE_LEFT_SIDENAV: {
       return { ...state, showLeftSidenav: false };
     }
-    case fromLayout.ActionTypes.TOGGLE_RIGHT_SIDENAV: {
+    case fromLayout.LayoutActionTypes.TOGGLE_RIGHT_SIDENAV: {
       return { ...state, showRightSidenav: action.payload };
     }
-    case fromLayout.ActionTypes.CLOSE_RIGHT_SIDENAV: {
+    case fromLayout.LayoutActionTypes.CLOSE_RIGHT_SIDENAV: {
       return { ...state, showRightSidenav: false };
     }
-    case fromLayout.ActionTypes.CHANGE_PAGE_NAME: {
+    case fromLayout.LayoutActionTypes.CHANGE_PAGE_NAME: {
       return { ...state, pageName: action.payload };
     }
     default: {

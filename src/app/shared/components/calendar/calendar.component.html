@@ -22,12 +22,12 @@
     <br />
     <br />
   </mat-card-content>
-  <mat-card-actions>
-    <a mat-raised-button color="accent" mat-size2 routerLink="/formularz" fxFlex="100">
-      <mat-icon aria-hidden="true">create</mat-icon>{{ 'LOGIN' | translate}}</a>
-    <a mat-raised-button color="accent" mat-size2 routerLink="/formularz" fxFlex="100">
-      <mat-icon aria-hidden="true">create</mat-icon>{{ 'SIGNIN' | translate}}</a>
-    <a mat-raised-button color="accent" mat-size2 routerLink="/formularz" fxFlex="100" fxHide="true">
-      <mat-icon aria-hidden="true">create</mat-icon>{{ 'WIDGET.CALENDAR.FORM' | translate}}</a>
+  <mat-card-actions fxLayout="column" fxLayoutGap="10px">
+    <button mat-raised-button color="accent" routerLink="/formularz">
+      <mat-icon aria-hidden="true">create</mat-icon>{{ 'LOGIN' | translate}}</button>
+    <button mat-raised-button color="accent" routerLink="/formularz">
+      <mat-icon aria-hidden="true">create</mat-icon>{{ 'SIGNIN' | translate}}</button>
+    <button mat-raised-button color="accent" routerLink="/formularz" fxHide="true">
+      <mat-icon aria-hidden="true">create</mat-icon>{{ 'WIDGET.CALENDAR.FORM' | translate}}</button>
   </mat-card-actions>
 </mat-card>

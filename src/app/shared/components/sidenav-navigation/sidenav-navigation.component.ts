@@ -1,15 +1,16 @@
-import { Component, OnInit } from '@angular/core';
+import {
+  Component,
+  Output,
+  EventEmitter,
+  ChangeDetectionStrategy
+} from '@angular/core';
 
 @Component({
   selector: 'app-sidenav-navigation',
   templateUrl: './sidenav-navigation.component.html',
-  styleUrls: ['./sidenav-navigation.component.scss']
+  styleUrls: ['./sidenav-navigation.component.scss'],
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
-export class SidenavNavigationComponent implements OnInit {
-
-  constructor() { }
-
-  ngOnInit() {
-  }
-
+export class SidenavNavigationComponent {
+  @Output() activate = new EventEmitter();
 }

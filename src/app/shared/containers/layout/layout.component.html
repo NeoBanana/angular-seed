@@ -26,7 +26,7 @@
     </main>
     <aside fxFlex="30" fxLayout="column" fxLayoutGap="10px">
       <layout-calendar></layout-calendar>
-      <layout-sponsors [sponsors]="layoutSandbox.loadSponsors()"></layout-sponsors>
+      <layout-sponsors [sponsors]="layoutSandbox.$sponsors | async"></layout-sponsors>
     </aside>
   </div>
   <div class="flex-spacer"></div>

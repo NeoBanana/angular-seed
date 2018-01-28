@@ -5,11 +5,16 @@ import { ContactComponent } from './pages/contact/contact.component';
 import { InfoGeneralComponent } from './pages/info-general/info-general.component';
 import { InfoRulesComponent } from './pages/info-rules/info-rules.component';
 import { EditionsComponent } from './pages/editions/editions.component';
+import { LoginComponent } from './pages/login/login.component';
 
 const routes: Routes = [
   {
     path: '',
     component: HomeComponent
+  },
+  {
+    path: 'login',
+    component: LoginComponent
   },
   {
     path: 'contact',

@@ -13,6 +13,7 @@ import {
 })
 export class ParticipantListComponent implements OnInit {
   @Input() list;
+  @Input() search: any;
   constructor() {}
 
   ngOnInit() {}

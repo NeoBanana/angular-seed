@@ -1,1 +1,1 @@
-<participant-info *ngFor="let participant of list" [participant]="participant"></participant-info>
+<participant-info *ngFor="let participant of list | search:'school_name':search" [participant]="participant"></participant-info>

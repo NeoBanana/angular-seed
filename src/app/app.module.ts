@@ -48,6 +48,7 @@ import { ComponentsModule } from './shared/components/components.module';
 import { ContainersModule } from './shared/containers/containers.module';
 import { AppSandbox } from './app.sandox';
 import { HttpModule } from '@angular/http';
+import { SponsorsService } from './shared/asyncServices/sponsors.service';
 
 export const devModeModules: any[] = isDevMode()
   ? [
@@ -91,6 +92,7 @@ export const Components = [AppComponent];
   ],
 
   providers: [
+    SponsorsService,
     { provide: RouterStateSerializer, useClass: CustomSerializer },
     ConfigService,
     {

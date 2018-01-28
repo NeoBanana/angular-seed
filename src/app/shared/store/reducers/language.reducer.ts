@@ -32,11 +32,11 @@ export function reducer(
   action: fromLanguage.LanguageActions
 ): LanguageState {
   switch (action.type) {
-    case fromLanguage.ActionTypes.SET_LANGUAGE: {
+    case fromLanguage.LanguageActionTypes.SET_LANGUAGE: {
       return { ...state, selectedLanguage: action.payload };
     }
 
-    case fromLanguage.ActionTypes.SET_CULTURE: {
+    case fromLanguage.LanguageActionTypes.SET_CULTURE: {
       return { ...state, selectedCulture: action.payload };
     }
 

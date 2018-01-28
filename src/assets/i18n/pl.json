@@ -6,6 +6,7 @@
   "MENU": {
     "EXAMPLE": "przykładowy tekst w menu"
   },
+  "SEARCH": "Wyszukaj",
   "WIDGET": {
     "CALENDAR": {
       "TITLE": "Terminarz",
@@ -22,5 +23,20 @@
     "SPONSORS": "Konkursowi patronuje i wspiera"
   },
 
-  "LANGUAGE": "jezyk"
+  "LANGUAGE": "jezyk",
+  "PAGES": {
+    "HOME": "Strona główna",
+    "INFO": {
+      "GENERAL": "Informacje ogólne",
+      "RULES": "Regulamin"
+    },
+    "CONTACT": "Kontakt",
+    "CONTACT.ADDRESS": "Adres",
+    "CONTACT.CHAIRMAN": "Przewodniczący",
+    "CONTACT.TELEPHONE": "telefon",
+    "EDITIONS": "Edycje",
+    "EDITION": {
+      "REGION": "Region"
+    }
+  }
 }

@@ -1,0 +1,16 @@
+<mat-card>
+  <mat-card-title>
+    <b>{{participant.school_name}}</b>
+  </mat-card-title>
+  <mat-card-subtitle>
+    {{participant.school_type}}
+  </mat-card-subtitle>
+  <mat-card-content>
+    <b>{{ 'PAGES.EDITION.REGION' | translate }}:</b>
+    <mat-list>
+      <mat-list-item>
+        {{participant.region}} {{participant.city}}
+      </mat-list-item>
+    </mat-list>
+  </mat-card-content>
+</mat-card>

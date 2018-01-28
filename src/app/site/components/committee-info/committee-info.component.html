@@ -4,18 +4,22 @@
   </mat-card-title>
   <mat-card-content>
 
-    Adress
+    {{ 'PAGES.CONTACT.ADDRESS' | translate}}
 
     <b>{{ committee.address.name }}</b>
     <br />
     <br /> {{ committee.address.street}}
-    <br /> {{ committee.address.postcode}} {{ committee.address.city}} Przewodnicący
+    <br /> {{ committee.address.postcode}} {{ committee.address.city}}
+    <br />
+    <br />
+    <b>{{ 'PAGES.CONTACT.CHAIRMAN' | translate}}</b>
+    <br />
 
     <b>{{committee.moderator.title}}</b> {{committee.moderator.firstname}} {{committee.moderator.surname}}
     <br />
     <br />
     <mat-list>
-      <h4 mat-header>Kontakt</h4>
+      <h4 mat-header> {{ 'PAGES.CONTACT' | translate}}</h4>
       <mat-list-item *ngIf="committee.moderator.email">
         <mat-icon mat-list-icon>mail</mat-icon>
         <h4 mat-line>Email:</h4>
@@ -25,7 +29,7 @@
       </mat-list-item>
       <mat-list-item *ngIf="committee.moderator.tel">
         <mat-icon mat-list-icon>phone</mat-icon>
-        <h4 mat-line>Telefon:</h4>
+        <h4 mat-line>{{ 'PAGES.CONTACT.TELEPHONE' | translate}}:</h4>
         <p mat-line> {{committee.moderator.tel}}</p>
       </mat-list-item>
       <mat-list-item *ngIf="committee.moderator.fax">

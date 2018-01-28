@@ -10,13 +10,18 @@ import { TranslateModule } from '@ngx-translate/core';
 import { ContactComponent } from './pages/contact/contact.component';
 import { EditionsComponent } from './pages/editions/editions.component';
 import { FormComponent } from './pages/form/form.component';
-import { InfoComponent } from './pages/info/info.component';
 import { CommitteeInfoComponent } from './components/committee-info/committee-info.component';
 import { CommitteeListComponent } from './containers/committee-list/committee-list.component';
 import { SearchComponent } from './components/search/search.component';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { FormsModule } from '@angular/forms';
 import { SearchPipe } from '../shared/pipes/search.pipe';
+import { InfoGeneralComponent } from './pages/info-general/info-general.component';
+import { InfoRulesComponent } from './pages/info-rules/info-rules.component';
+import { ParticipantListComponent } from './containers/participant-list/participant-list.component';
+import { ParticipantInfoComponent } from './components/participant-info/participant-info.component';
+import { EditionResultComponent } from './components/edition-result/edition-result.component';
+import { EditionStatisticComponent } from './components/edition-statistic/edition-statistic.component';
 
 @NgModule({
   imports: [
@@ -34,11 +39,18 @@ import { SearchPipe } from '../shared/pipes/search.pipe';
     ContactComponent,
     EditionsComponent,
     FormComponent,
-    InfoComponent,
+    InfoGeneralComponent,
+    InfoRulesComponent,
     CommitteeInfoComponent,
     CommitteeListComponent,
     SearchComponent,
-    SearchPipe
+    SearchPipe,
+    InfoGeneralComponent,
+    InfoRulesComponent,
+    ParticipantListComponent,
+    ParticipantInfoComponent,
+    EditionResultComponent,
+    EditionStatisticComponent
   ],
   providers: []
 })

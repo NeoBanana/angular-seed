@@ -6,12 +6,12 @@ import * as layoutActions from '../../../shared/store/actions/layout.action';
 import { Sandbox } from '../../../shared/sandbox/base.sandbox';
 import { TranslateService } from '@ngx-translate/core';
 @Injectable()
-export class HomeSandbox extends Sandbox {
+export class InfoGeneralSandbox extends Sandbox {
   constructor(
     protected appState$: Store<fromStore.AppState>,
     protected translate: TranslateService
   ) {
     super(appState$, translate);
-    this.setPageNameByCode('PAGES.HOME');
+    this.setPageNameByCode('PAGES.INFO.GENERAL');
   }
 }

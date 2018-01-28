@@ -3,10 +3,16 @@ import { Subscription } from 'rxjs';
 import { Store } from '@ngrx/store';
 import * as fromStore from '../../../shared/store';
 import * as layoutActions from '../../../shared/store/actions/layout.action';
+import { Sandbox } from '../../../shared/sandbox/base.sandbox';
+import { TranslateService } from '@ngx-translate/core';
 @Injectable()
-export class ContactSandbox {
-  constructor(protected appState$: Store<fromStore.AppState>) {
-    this.appState$.dispatch(new layoutActions.ChangePageName('contact'));
+export class ContactSandbox extends Sandbox {
+  constructor(
+    protected appState$: Store<fromStore.AppState>,
+    protected translate: TranslateService
+  ) {
+    super(appState$, translate);
+    this.setPageNameByCode('PAGES.CONTACT');
   }
   loadCommittees() {
     return [

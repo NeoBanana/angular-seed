@@ -2,6 +2,6 @@
   <mat-placeholder>
     <b>
       <mat-icon>search</mat-icon>
-    </b> Wyszukaj</mat-placeholder>
+    </b> {{ 'SEARCH' | translate}}</mat-placeholder>
   <input matInput (keyup)="search.emit($event.target.value)">
 </mat-form-field>

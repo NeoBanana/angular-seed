@@ -1,11 +1,18 @@
 <mat-sidenav-container fullscreen>
-  <mat-sidenav #sidenav mode="over" [opened]="layoutSandbox.$showSidenav | async" [ngClass.gt-md]="{'sidenav-desktop':true}"
-    [ngClass.lt-lg]="{'sidenav-mobile':true}" [fixedInViewport]="true" (openedChange)="layoutSandbox.toggleSidenav($event)">
-    <app-sidenav-navigation (activate)="layoutSandbox.closeSidenav()"></app-sidenav-navigation>
+  <mat-sidenav #sidenavLeft mode="over" [opened]="layoutSandbox.$showLeftSidenav | async" [ngClass.gt-sm]="{'sidenav-desktop':true}"
+    [ngClass.lt-lg]="{'sidenav-mobile':true}" [fixedInViewport]="true" (openedChange)="layoutSandbox.toggleLeftSidenav($event)">
+    <app-sidenav-navigation (activate)="layoutSandbox.closeLeftSidenav()"></app-sidenav-navigation>
 
   </mat-sidenav>
 
-  <layout-header (selectLanguage)="layoutSandbox.selectLanguage($event)" (openSidenav)="sidenav.toggle()">
+  <mat-sidenav #sidenavRight mode="over" [opened]="layoutSandbox.$showRightSidenav | async" [ngClass.lt-md]="{'sidenav-mobile':true}"
+    [fixedInViewport]="true" (openedChange)="layoutSandbox.toggleRightSidenav($event)" position="end">
+    <div class="SidenavLogin">
+      <layout-login (logIn)="layoutSandbox.logIn($event)"></layout-login>
+    </div>
+  </mat-sidenav>
+  <layout-header (selectLanguage)="layoutSandbox.selectLanguage($event)" (openLeftSidenav)="sidenavLeft.toggle()" (openRightSidenav)="sidenavRight.toggle()"
+    (logIn)="layoutSandbox.logIn($event)">
 
   </layout-header>
   <div fxLayout.gt-md="row wrap" fxLayout.lt-lg="column" fxLayoutGap="10px" class="container">

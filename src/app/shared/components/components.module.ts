@@ -17,6 +17,7 @@ import { CalendarComponent } from './calendar/calendar.component';
 import { SponsorsComponent } from './sponsors/sponsors.component';
 import { FooterComponent } from './footer/footer.component';
 import { SidenavNavigationComponent } from './sidenav-navigation/sidenav-navigation.component';
+import { LoginComponent } from './login/login.component';
 
 // import { PageNotFoundComponent } from "./pageNotFound/pageNotFound.component";
 
@@ -30,7 +31,8 @@ export const COMPONENTS = [
 
   LanguageSelectorComponent,
   CalendarComponent,
-  SponsorsComponent
+  SponsorsComponent,
+  LoginComponent
 
   // PageNotFoundComponent
 ];

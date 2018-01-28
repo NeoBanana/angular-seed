@@ -1,0 +1,12 @@
+<form [formGroup]="LoginGroup" fxLayout.lt-md="column">
+  <mat-form-field color="accent">
+    <input matInput shouldLabelFloat="false" placeholder="Login" formControlName="login" required>
+  </mat-form-field>
+  <mat-form-field color="accent">
+    <input matInput shouldLabelFloat="false" type="password" placeholder="Hasło" formControlName="pass" required>
+  </mat-form-field>
+
+  <button fxFlexAlign.gt-sm="center" mat-raised-button color="accent" mat-size2 (click)="logIn.emit(this.LoginGroup.value)">
+    <mat-icon aria-hidden="true">done</mat-icon>Zaloguj się </button>
+
+</form>

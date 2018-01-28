@@ -1,10 +1,16 @@
 <mat-toolbar color="primary">
-  <button mat-icon-button (click)="openSidenav.emit($event)" fxShow.gt-md="false">
+  <button mat-icon-button (click)="openLeftSidenav.emit($event)" fxShow.gt-sm="false">
     <mat-icon>menu</mat-icon>
   </button>
-  <app-navigation fxShow.lt-lg="false"></app-navigation>
+  <app-navigation fxShow.lt-md="false"></app-navigation>
 
   <div class=" flex-spacer "></div>
+  <div fxShow.gt-sm="false">Matematyka Bez Granic </div>
+  <div class=" flex-spacer "></div>
+  <button mat-icon-button (click)="openRightSidenav.emit($event)" fxShow.gt-sm="false">
+    <mat-icon>menu</mat-icon>
+  </button>
+  <layout-login fxShow.lt-md="false" (logIn)="logIn.emit($event)"></layout-login>
 </mat-toolbar>
 
 <div class="header__wrap ">

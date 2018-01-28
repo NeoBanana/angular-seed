@@ -5,9 +5,14 @@ import * as fromLayout from '../reducers/layout.reducer';
 
 export const getLayoutState = (state: fromFeature.AppState) => state.layout;
 
-export const getShowSidenav = createSelector(
+export const getShowLeftSidenav = createSelector(
   getLayoutState,
-  fromLayout.getShowSidenav
+  fromLayout.getShowLeftSidenav
+);
+
+export const getShowRightSidenav = createSelector(
+  getLayoutState,
+  fromLayout.getShowRightSidenav
 );
 export const getPageName = createSelector(
   getLayoutState,

@@ -17,5 +17,7 @@ export class HeaderComponent {
   @Input() availableLanguages: Array<any>;
 
   @Output() selectLanguage: EventEmitter<any> = new EventEmitter();
-  @Output() openSidenav: EventEmitter<any> = new EventEmitter();
+  @Output() openLeftSidenav: EventEmitter<any> = new EventEmitter();
+  @Output() openRightSidenav: EventEmitter<any> = new EventEmitter();
+  @Output() logIn: EventEmitter<any> = new EventEmitter();
 }

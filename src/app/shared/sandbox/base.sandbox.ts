@@ -17,8 +17,6 @@ export abstract class Sandbox {
     });
   }
   setPageName(pageName) {
-
-      this.appState$.dispatch(new layoutActions.ChangePageName(pageName));
+    this.appState$.dispatch(new layoutActions.ChangePageName(pageName));
   }
-}
 }

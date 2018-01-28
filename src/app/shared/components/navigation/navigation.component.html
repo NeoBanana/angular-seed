@@ -4,7 +4,7 @@
 <button mat-raised-button color="primary" [matMenuTriggerFor]="edycje" routerLinkActive="mat-accent" [routerLinkActiveOptions]="{exact: true}">Edycje
   <mat-menu #edycje="matMenu">
     <a mat-menu-item href="http://www.mbg.uz.zgora.pl/">poprzednie edycje</a>
-    <button mat-menu-item *ngFor="let edition of editions" routerLink="/edycja/{{edition.id}}" routerLinkActive="menu__link--active">{{edition.nazwa}}</button>
+    <button mat-menu-item routerLink="/edycja/1" routerLinkActive="menu__link--active">Edycja XII</button>
   </mat-menu>
 </button>
 <button mat-raised-button color="primary" [matMenuTriggerFor]="info" routerLinkActive="mat-accent" [routerLinkActiveOptions]="{exact: true}">Informacje

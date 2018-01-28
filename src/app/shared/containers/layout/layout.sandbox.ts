@@ -13,7 +13,10 @@ export class LayoutSandbox {
   public $availableLanguages = this.appState$.select(
     fromStore.getAvailableLanguages
   );
-  public $showSidenav = this.appState$.select(fromStore.getShowSidenav);
+  public $showLeftSidenav = this.appState$.select(fromStore.getShowLeftSidenav);
+  public $showRightSidenav = this.appState$.select(
+    fromStore.getShowRightSidenav
+  );
   public $pageName = this.appState$.select(fromStore.getPageName);
   constructor(
     protected appState$: Store<fromStore.AppState>,
@@ -25,11 +28,24 @@ export class LayoutSandbox {
     this.appState$.dispatch(new languageActions.SetLanguageAction(lang));
     this.appState$.dispatch(new languageActions.SetCultureAction(lang.culture));
   }
-  public toggleSidenav(opened: boolean) {
-    this.appState$.dispatch(new layoutActions.ToggleSidenav(opened));
+  public toggleLeftSidenav(opened: boolean) {
+    this.appState$.dispatch(new layoutActions.ToggleLeftSidenav(opened));
   }
-  public closeSidenav() {
-    this.appState$.dispatch(new layoutActions.CloseSidenav(false));
+  public closeLeftSidenav() {
+    this.appState$.dispatch(new layoutActions.CloseLeftSidenav(false));
+  }
+  public toggleRightSidenav(opened: boolean) {
+    this.appState$.dispatch(new layoutActions.ToggleRightSidenav(opened));
+  }
+  public closeRightSidenav() {
+    this.appState$.dispatch(new layoutActions.CloseRightSidenav(false));
+  }
+  public logIn(loginData) {
+    if (loginData.login != 'admin' && loginData.pass != 'admin') {
+      console.log('haslo niepoprawne');
+    } else {
+      console.log('haslo poprawne');
+    }
   }
   public loadSponsors(): Array<any> {
     return [

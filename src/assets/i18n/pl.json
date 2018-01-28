@@ -1,4 +1,6 @@
 {
+  "LOGIN": "Zaloguj, aby się zapisać!",
+  "SIGNIN": "Nie masz jeszcze konta? Załóż je!",
   "HOME": {
     "TITLE": "Witaj  w {{value}}",
     "HELPFUL": "Tutaj masz troche pomocnych linków aby zacząć:"

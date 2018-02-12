@@ -1,3 +1,57 @@
-<p>
-  edition-result works!
-</p>
+<div class="example-header">
+  <!-- <mat-form-field>
+    <input matInput (keyup)="applyFilter($event.target.value)" placeholder="Filter">
+  </mat-form-field> -->
+  <mat-form-field>
+    <mat-select placeholder="Wojewodztwa" (selectionChange)="applyFilter($event.value)">
+      <mat-option *ngFor="let w of WOJ" [value]="w">
+        {{ w }}
+      </mat-option>
+    </mat-select>
+  </mat-form-field>
+</div>
+
+<div class="example-container mat-elevation-z8">
+
+  <mat-table [dataSource]="dataSource" matSort>
+
+    <!-- ID Column
+    <ng-container matColumnDef="id">
+      <mat-header-cell *matHeaderCellDef mat-sort-header> ID </mat-header-cell>
+      <mat-cell *matCellDef="let row"> {{row.id}} </mat-cell>
+    </ng-container> -->
+
+    <!-- Progress Column -->
+    <ng-container matColumnDef="wojewodztwo">
+      <mat-header-cell *matHeaderCellDef mat-sort-header> Wojwodztwo </mat-header-cell>
+      <mat-cell *matCellDef="let row"> {{row.wojewodztwo}} </mat-cell>
+    </ng-container>
+
+    <!-- Place -->
+    <ng-container matColumnDef="place">
+      <mat-header-cell *matHeaderCellDef mat-sort-header> Miejsce wg Kraj </mat-header-cell>
+      <mat-cell *matCellDef="let row"> {{row.place}} </mat-cell>
+    </ng-container>
+
+    <!-- Name Column -->
+    <ng-container matColumnDef="name">
+      <mat-header-cell *matHeaderCellDef mat-sort-header> Imie </mat-header-cell>
+      <mat-cell *matCellDef="let row"> {{row.name}} </mat-cell>
+    </ng-container>
+    <!-- nazwisko Column -->
+    <ng-container matColumnDef="surname">
+      <mat-header-cell *matHeaderCellDef mat-sort-header> Nazwisko </mat-header-cell>
+      <mat-cell *matCellDef="let row"> {{row.surname}} </mat-cell>
+    </ng-container>
+
+    <!-- Place -->
+    <ng-container matColumnDef="schoolname">
+      <mat-header-cell *matHeaderCellDef mat-sort-header> Szkola</mat-header-cell>
+      <mat-cell *matCellDef="let row"> {{row.schoolname}} </mat-cell>
+    </ng-container>
+
+    <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+    <mat-row *matRowDef="let row; columns: displayedColumns;">
+    </mat-row>
+  </mat-table>
+</div>

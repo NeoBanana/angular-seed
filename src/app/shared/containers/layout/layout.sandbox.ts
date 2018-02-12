@@ -1,12 +1,12 @@
-import { Injectable } from '@angular/core';
-import { Router } from '@angular/router';
+import { Injectable } from "@angular/core";
+import { Router } from "@angular/router";
 
-import { Store } from '@ngrx/store';
-import * as fromStore from '../../store';
-import * as languageActions from '../../store/actions/language.action';
-import * as layoutActions from '../../store/actions/layout.action';
-import * as sponsorsActions from '../../store/actions/sponsors.action';
-import { TranslateService } from '@ngx-translate/core';
+import { Store } from "@ngrx/store";
+import * as fromStore from "../../store";
+import * as languageActions from "../../store/actions/language.action";
+import * as layoutActions from "../../store/actions/layout.action";
+import * as sponsorsActions from "../../store/actions/sponsors.action";
+import { TranslateService } from "@ngx-translate/core";
 
 @Injectable()
 export class LayoutSandbox {
@@ -48,39 +48,39 @@ export class LayoutSandbox {
     this.appState$.dispatch(new layoutActions.CloseRightSidenav(false));
   }
   public logIn(loginData) {
-    if (loginData.login != 'admin' && loginData.pass != 'admin') {
-      console.log('haslo niepoprawne');
+    if (loginData.login != "admin" && loginData.pass != "admin") {
+      console.log("haslo niepoprawne");
     } else {
-      console.log('haslo poprawne');
+      console.log("haslo poprawne");
     }
   }
   public loadSponsors(): Array<any> {
     return [
       {
-        name: 'Polskie Towarzystwo Matematyczne',
-        href: 'http://www.ptm.org.pl/',
-        src: 'http://www.mbg.uz.zgora.pl/ptm-logo-150.png'
+        name: "Polskie Towarzystwo Matematyczne",
+        href: "http://www.ptm.org.pl/",
+        src: "http://www.mbg.uz.zgora.pl/ptm-logo-150.png"
       },
       {
-        name: 'Matematyka Bez Granic',
-        href: 'http://www.mbg.uz.zgora.pl',
-        src: 'http://www.mbg.uz.zgora.pl/logo.php'
+        name: "Matematyka Bez Granic",
+        href: "http://www.mbg.uz.zgora.pl",
+        src: "http://www.mbg.uz.zgora.pl/logo.php"
       },
       {
-        name: 'Polskie Towarzystwo Matematyczne',
-        href: 'http://www.ptm.org.pl/',
+        name: "Polskie Towarzystwo Matematyczne",
+        href: "http://www.ptm.org.pl/",
         src:
-          'https://hdwallsource.com/img/2014/7/large-40566-41516-hd-wallpapers.jpg'
+          "https://hdwallsource.com/img/2014/7/large-40566-41516-hd-wallpapers.jpg"
       },
       {
-        name: 'Polskie Towarzystwo Matematyczne',
-        href: 'http://www.ptm.org.pl/',
-        src: 'http://www.mbg.uz.zgora.pl/ptm-logo-150.png'
+        name: "Polskie Towarzystwo Matematyczne",
+        href: "http://www.ptm.org.pl/",
+        src: "http://www.mbg.uz.zgora.pl/ptm-logo-150.png"
       },
       {
-        name: 'Polskie Towarzystwo Matematyczne',
-        href: 'http://www.ptm.org.pl/',
-        src: 'http://www.mbg.uz.zgora.pl/ptm-logo-150.png'
+        name: "Polskie Towarzystwo Matematyczne",
+        href: "http://www.ptm.org.pl/",
+        src: "http://www.mbg.uz.zgora.pl/ptm-logo-150.png"
       }
     ];
   }

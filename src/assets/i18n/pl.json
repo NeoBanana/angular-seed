@@ -1,6 +1,7 @@
 {
-  "LOGIN": "Zaloguj, aby się zapisać!",
-  "SIGNIN": "Nie masz jeszcze konta? Załóż je!",
+  "LOGIN": "Zaloguj",
+  "SIGNIN": "Rejestracja",
+  "ADMIN-PANEL": "Admin Panel",
   "HOME": {
     "TITLE": "Witaj  w {{value}}",
     "HELPFUL": "Tutaj masz troche pomocnych linków aby zacząć:"
@@ -16,11 +17,13 @@
         "Terminarz {{name}} \"MBG\" wersja Senior edycja ({{year}})",
       "VERSION_JUNIOR":
         "Terminarz {{name}} \"MBG\" wersja Junior edycja ({{year}})",
-      "SIGNIN": "zgłoszenie uczestnictwa: {{time}}",
+      "SIGNIN_TO": "zgłoszenie uczestnictwa: {{time}}",
       "PRELIMINARY": "etap wstępny (wewnątrzszkolny): {{time}}",
-      "FINALE": "etap finałowy: ",
+      "FINALE": "etap finałowy: {{time}} ",
       "AWARDS": "{{time}}: wręczenie nagród i dyplomów laureatom konkursu.",
-      "FORM": "Formularz Zgłoszeniowy"
+      "FORM": "Formularz Zgłoszeniowy",
+      "LOGIN": "Zaloguj, aby się zapisać!",
+      "SIGNIN": "Nie masz jeszcze konta? Załóż je!"
     },
     "SPONSORS": "Konkursowi patronuje i wspiera"
   },

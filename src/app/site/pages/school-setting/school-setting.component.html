@@ -1,0 +1,57 @@
+<div class="center">
+  <div class="register">
+    <br />
+    <b>Szkola</b>
+    <br />
+
+    <mat-form-field>
+      <input matInput placeholder="Nazwa Szkoly" required>
+    </mat-form-field>
+    <mat-form-field class="example-full-width">
+      <textarea matInput placeholder="Adres Szkoly"></textarea>
+    </mat-form-field>
+    <mat-form-field>
+      <mat-select placeholder="Wojewodztwo">
+        <mat-option *ngFor="let woj of WOJ" [value]="woj">
+          {{ woj }}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+    <br />
+    <br />
+    <b>Pierwszy Opiekun</b>
+    <br />
+    <mat-form-field>
+      <input matInput placeholder="Imie" required>
+    </mat-form-field>
+    <mat-form-field>
+      <input matInput placeholder="Nazwisko" required>
+    </mat-form-field>
+    <mat-form-field>
+      <input matInput placeholder="Wprowadz email" formControlName="mail" required>
+      <mat-error *ngIf="email.invalid">{{getErrorMessage()}}</mat-error>
+    </mat-form-field>
+    <br />
+    <b>Drugi Opiekun</b>
+    <br />
+    <mat-form-field>
+      <input matInput placeholder="Imie" required>
+    </mat-form-field>
+    <mat-form-field>
+      <input matInput placeholder="Nazwisko" required>
+    </mat-form-field>
+    <mat-form-field>
+      <input matInput placeholder="Wprowadz email" formControlName="mail" required>
+      <mat-error *ngIf="email.invalid">{{getErrorMessage()}}</mat-error>
+    </mat-form-field>
+    <br />
+    <b>Dane Konta</b>
+    <br />
+    <mat-form-field>
+      <input matInput placeholder="Wprowadz email" formControlName="mail" required>
+      <mat-error *ngIf="email.invalid">{{getErrorMessage()}}</mat-error>
+    </mat-form-field>
+    <button fxFlexAlign.gt-sm="center" mat-raised-button color="accent" mat-size2 (click)="logIn.emit(this.LoginGroup.value)">
+      <mat-icon aria-hidden="true">done</mat-icon>Potwierdz zmiany</button>
+  </div>
+</div>

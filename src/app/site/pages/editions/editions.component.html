@@ -1,2 +1,22 @@
-<app-search (search)="search($event)"></app-search>
-<participant-list [list]="sandbox.$participants | async" [search]="$querry |async" fxLayout="row wrap" fxLayoutGap="10px">...</participant-list>
+<mat-card-content>
+    <mat-tab-group>
+        <mat-tab>
+            <ng-template mat-tab-label>
+                Uczestnicy
+            </ng-template>
+            <app-search (search)="search($event)"></app-search>
+            <participant-list [list]="sandbox.$participants | async" [search]="$querry |async" fxLayout="row wrap" fxLayoutGap="10px">...</participant-list>
+        </mat-tab>
+        <mat-tab>
+            <ng-template mat-tab-label>
+                Statystyki
+            </ng-template>
+            <edition-statistic></edition-statistic>
+        </mat-tab>
+        <mat-tab>
+            <ng-template mat-tab-label>
+                Wyniki
+            </ng-template>
+            <edition-result></edition-result>
+        </mat-tab>
+    </mat-tab-group>

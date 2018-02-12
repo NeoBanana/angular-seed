@@ -17,7 +17,9 @@ import {
   MatSnackBarModule,
   MatFormFieldModule,
   MatSelectModule,
-  MatStepperModule
+  MatStepperModule,
+  MatPaginatorModule,
+  MatSortModule
 } from "@angular/material";
 
 @NgModule({
@@ -38,7 +40,9 @@ import {
     MatSnackBarModule,
     MatFormFieldModule,
     MatSelectModule,
-    MatStepperModule
+    MatStepperModule,
+    MatPaginatorModule,
+    MatSortModule
   ]
 })
 export class MaterialModule {}

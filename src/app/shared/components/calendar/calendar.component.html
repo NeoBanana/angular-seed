@@ -6,14 +6,14 @@
     <b> {{ 'WIDGET.CALENDAR.VERSION_SENIOR' | translate :{name:"XXIX MK ",year:"2017/2018"} }}</b>
     <br />
     <br />
-    <br /> {{ 'WIDGET.CALENDAR.SIGNIN' | translate :{time:" od października do grudnia 2017 roku"} }}
+    <br /> {{ 'WIDGET.CALENDAR.SIGNIN_TO' | translate :{time:" od października do grudnia 2017 roku"} }}
     <br /> {{ 'WIDGET.CALENDAR.PRELIMINARY' | translate :{time:"styczeń – 26 luty 2018 roku"} }}
     <br /> {{ 'WIDGET.CALENDAR.FINALE' | translate :{time:"27 luty 2018 roku"} }}
     <br />
     <br />
     <b>{{ 'WIDGET.CALENDAR.VERSION_SENIOR' | translate :{name:"MK ",year:"2017/2018"} }}</b>
     <br />
-    <br /> {{ 'WIDGET.CALENDAR.SIGNIN' | translate :{time:" od października do grudnia 2017 roku"} }}
+    <br /> {{ 'WIDGET.CALENDAR.SIGNIN_TO' | translate :{time:" od października do grudnia 2017 roku"} }}
     <br /> {{ 'WIDGET.CALENDAR.PRELIMINARY' | translate :{time:"styczeń – 26 luty 2018 roku"} }}
     <br /> {{ 'WIDGET.CALENDAR.PRELIMINARY' | translate :{time:"styczeń – 26 luty 2018 roku"} }}
     <br /> {{ 'WIDGET.CALENDAR.FINALE' | translate :{time:"28 luty 2018 roku"} }}
@@ -23,11 +23,11 @@
     <br />
   </mat-card-content>
   <mat-card-actions fxLayout="column" fxLayoutGap="10px">
-    <button mat-raised-button color="accent" routerLink="/formularz">
-      <mat-icon aria-hidden="true">create</mat-icon>{{ 'LOGIN' | translate}}</button>
-    <button mat-raised-button color="accent" routerLink="/formularz">
-      <mat-icon aria-hidden="true">create</mat-icon>{{ 'SIGNIN' | translate}}</button>
-    <button mat-raised-button color="accent" routerLink="/formularz" fxHide="true">
+    <button mat-raised-button color="accent" routerLink="/login">
+      <mat-icon aria-hidden="true">create</mat-icon>{{ 'WIDGET.CALENDAR.LOGIN' | translate}}</button>
+    <button mat-raised-button color="accent" routerLink="/register">
+      <mat-icon aria-hidden="true">create</mat-icon>{{ 'WIDGET.CALENDAR.SIGNIN' | translate}}</button>
+    <button mat-raised-button color="accent" routerLink="/register" fxHide="true">
       <mat-icon aria-hidden="true">create</mat-icon>{{ 'WIDGET.CALENDAR.FORM' | translate}}</button>
   </mat-card-actions>
 </mat-card>

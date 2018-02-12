@@ -1,0 +1,25 @@
+<div class="center">
+  <div class="register">
+    <mat-form-field>
+      <input matInput placeholder="Login" required>
+    </mat-form-field>
+    <mat-form-field>
+      <input matInput placeholder="Wprowadz hasło" [type]="hide1 ? 'password' : 'text'" required>
+      <mat-icon matSuffix (click)="hide1 = !hide1">{{hide1 ? 'visibility' : 'visibility_off'}}</mat-icon>
+    </mat-form-field>
+    <mat-form-field>
+      <input matInput placeholder="Powtorz hasło" [type]="hide2 ? 'password' : 'text'" required>
+      <mat-icon matSuffix (click)="hide2 = !hide2">{{hide2 ? 'visibility' : 'visibility_off'}}</mat-icon>
+    </mat-form-field>
+    <mat-form-field>
+      <input matInput placeholder="Wprowadz email" formControlName="mail" required>
+      <mat-error *ngIf="email.invalid">{{getErrorMessage()}}</mat-error>
+    </mat-form-field>
+    <mat-form-field>
+      <input matInput placeholder="Powtorz email" required>
+      <mat-error *ngIf="email.invalid">{{getErrorMessage()}}</mat-error>
+    </mat-form-field>
+    <button fxFlexAlign.gt-sm="center" mat-raised-button color="accent" mat-size2 (click)="logIn.emit(this.LoginGroup.value)">
+      <mat-icon aria-hidden="true">done</mat-icon>Zarejestruj sie </button>
+  </div>
+</div>

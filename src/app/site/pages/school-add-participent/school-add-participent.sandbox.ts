@@ -6,13 +6,13 @@ import * as layoutActions from "../../../shared/store/actions/layout.action";
 import { Sandbox } from "../../../shared/sandbox/base.sandbox";
 import { TranslateService } from "@ngx-translate/core";
 @Injectable()
-export class LoginSandbox extends Sandbox {
+export class SchoolAddParticipentSandbox extends Sandbox {
   constructor(
     protected appState$: Store<fromStore.AppState>,
     protected translate: TranslateService
   ) {
     super(appState$, translate);
-    this.setPageNameByCode("LOGIN");
+    this.setPageName("Dodaj Uczestnika");
   }
   logIn() {
     console.log("proba zalogowania sie");

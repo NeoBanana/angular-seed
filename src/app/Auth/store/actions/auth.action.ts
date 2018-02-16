@@ -31,7 +31,7 @@ export class LogInUserFail implements Action {
 export class LogInUserSuccess implements Action {
   type = AuthActionTypes.LOGIN_SUCCESS;
 
-  constructor(public payload: User) {}
+  constructor(public payload: { user: User; token: string }) {}
 }
 
 export class LogOutUser implements Action {

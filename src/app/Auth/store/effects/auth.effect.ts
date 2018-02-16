@@ -45,13 +45,24 @@ export class AuthEffects {
     .ofType(authActions.AuthActionTypes.LOGIN)
     .map((action: authActions.LogInUser) => action.payload)
     .switchMap(state => {
-      return this.authService
-        .logIn(state)
-        .map(user => new authActions.LogInUserSuccess(user))
-        .catch(error => {
-          console.log(JSON.stringify(error.error));
-          return of(new authActions.LogInUserFail(error.error));
-        });
+      return [
+        new authActions.LogInUserSuccess({
+          user: {
+            id: 'test',
+            login: 'test',
+            email: 'test',
+            role: 'user'
+          },
+          token: 'bla bla'
+        })
+      ];
+      // return this.authService
+      //   .logIn(state)
+      //   .map(user => new authActions.LogInUserSuccess(user))
+      //   .catch(error => {
+      //     console.log(JSON.stringify(error.error));
+      //     return of(new authActions.LogInUserFail(error.error));
+      //   });
     });
   /**
    * Registers effect
@@ -67,17 +78,17 @@ export class AuthEffects {
         .catch(error => of(new authActions.RegisterUserFail(error)));
     });
 
-  @Effect()
-  successHandler$: Observable<Action> = this.actions$
-    .ofType(
-      authActions.AuthActionTypes.LOGIN_SUCCESS,
-      authActions.AuthActionTypes.REGISTER_SUCCESS
-    )
-    .pipe(
-      map(success => {
-        return new sharedStore.Go({
-          path: ['/']
-        });
-      })
-    );
+  // @Effect()
+  // successHandler$: Observable<Action> = this.actions$
+  //   .ofType(
+  //     authActions.AuthActionTypes.LOGIN_SUCCESS,
+  //     authActions.AuthActionTypes.REGISTER_SUCCESS
+  //   )
+  //   .pipe(
+  //     map(success => {
+  //       return new sharedStore.Go({
+  //         path: ['/']
+  //       });
+  //     })
+  //   );
 }

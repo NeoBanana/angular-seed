@@ -10,7 +10,7 @@ import { HomeSandbox } from './home.sandbox';
 export class HomeComponent implements OnInit {
   myVal = '<a href="/edycja/1">test</a>';
 
-  constructor(private homeSandbox: HomeSandbox) {}
+  constructor(private sandbox: HomeSandbox) {}
 
   ngOnInit() {}
 }

@@ -9,7 +9,7 @@
     [fixedInViewport]="true" (openedChange)="layoutSandbox.toggleRightSidenav($event)" position="end">
     <div class="SidenavLogin">
       <!-- <layout-login (logIn)="layoutSandbox.logIn($event)"></layout-login> -->
-      <app-admin-side-nav></app-admin-side-nav>
+      <app-admin-side-nav (activate)="layoutSandbox.closeRightSidenav()"></app-admin-side-nav>
     </div>
   </mat-sidenav>
   <layout-header (selectLanguage)="layoutSandbox.selectLanguage($event)" (openLeftSidenav)="sidenavLeft.toggle()" (openRightSidenav)="sidenavRight.toggle()"

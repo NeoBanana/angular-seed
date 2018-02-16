@@ -1,10 +1,10 @@
-import { Injectable } from "@angular/core";
-import { Subscription } from "rxjs";
-import { Store } from "@ngrx/store";
-import * as fromStore from "../../../shared/store";
-import * as layoutActions from "../../../shared/store/actions/layout.action";
-import { Sandbox } from "../../../shared/sandbox/base.sandbox";
-import { TranslateService } from "@ngx-translate/core";
+import { Injectable } from '@angular/core';
+import { Subscription } from 'rxjs';
+import { Store } from '@ngrx/store';
+import * as fromStore from '../../../shared/store';
+import * as layoutActions from '../../../shared/store/actions/layout.action';
+import { Sandbox } from '../../../shared/sandbox/base.sandbox';
+import { TranslateService } from '@ngx-translate/core';
 @Injectable()
 export class SchoolSettingSandbox extends Sandbox {
   constructor(
@@ -12,9 +12,9 @@ export class SchoolSettingSandbox extends Sandbox {
     protected translate: TranslateService
   ) {
     super(appState$, translate);
-    this.setPageName("Ustawienia Szkoly");
+    this.setPageName('Ustawienia Szkoly');
   }
   logIn() {
-    console.log("proba zalogowania sie");
+    console.log('proba zalogowania sie');
   }
 }

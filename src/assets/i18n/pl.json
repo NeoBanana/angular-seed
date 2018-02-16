@@ -1,6 +1,6 @@
 {
   "LOGIN": "Zaloguj",
-  "SIGNIN": "Rejestracja",
+  "REGISTER": "Rejestracja",
   "ADMIN-PANEL": "Admin Panel",
   "HOME": {
     "TITLE": "Witaj  w {{value}}",

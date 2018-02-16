@@ -4,7 +4,7 @@ import { AppComponent } from './app.component';
 
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule, isDevMode, APP_INITIALIZER } from '@angular/core';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { Router } from '@angular/router';
 
 // Routes
@@ -49,6 +49,10 @@ import { ContainersModule } from './shared/containers/containers.module';
 import { AppSandbox } from './app.sandox';
 import { HttpModule } from '@angular/http';
 import { SponsorsService } from './shared/asyncServices/sponsors.service';
+import {
+  AuthGuardIsLogged,
+  AuthGuardNotLogged
+} from './Auth/guards/auth.guard';
 
 export const devModeModules: any[] = isDevMode()
   ? [
@@ -75,6 +79,8 @@ export const Components = [AppComponent];
     MaterialModule,
     HttpClientModule,
     HttpModule,
+    FormsModule,
+    ReactiveFormsModule,
     BrowserAnimationsModule,
     StoreModule.forRoot(reducers, { metaReducers }),
     EffectsModule.forRoot(effects),
@@ -100,7 +106,9 @@ export const Components = [AppComponent];
       useFactory: configServiceFactory,
       deps: [ConfigService],
       multi: true
-    }
+    },
+    AuthGuardIsLogged,
+    AuthGuardNotLogged
   ],
   bootstrap: [AppComponent]
 })

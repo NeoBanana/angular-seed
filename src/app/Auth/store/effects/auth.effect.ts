@@ -45,6 +45,7 @@ export class AuthEffects {
     .ofType(authActions.AuthActionTypes.LOGIN)
     .map((action: authActions.LogInUser) => action.payload)
     .switchMap(state => {
+      console.log(state);
       return [
         new authActions.LogInUserSuccess({
           user: {

@@ -12,7 +12,7 @@ import { AppRoutingModule } from './app-routing.module';
 
 // Services
 import { ConfigService } from './app-config.service';
-
+//#region Store
 // Store: not used in production
 import { storeFreeze } from 'ngrx-store-freeze';
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
@@ -28,6 +28,17 @@ import { reducers, effects, CustomSerializer } from './shared/store';
 export const metaReducers: MetaReducer<any>[] = isDevMode()
   ? [storeFreeze]
   : [];
+//#endregion
+
+//#region Apollo GraphQl
+import { ApolloModule, Apollo } from 'apollo-angular';
+import { split } from 'apollo-link';
+import { WebSocketLink } from 'apollo-link-ws';
+import { getMainDefinition } from 'apollo-utilities';
+
+import { HttpLinkModule, HttpLink } from 'apollo-angular-link-http';
+import { InMemoryCache } from 'apollo-cache-inmemory';
+//#endregion
 
 // FalseDatabase
 import { HttpClientInMemoryWebApiModule } from 'angular-in-memory-web-api';
@@ -39,11 +50,12 @@ import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 export function HttpLoaderFactory(http: HttpClient) {
   return new TranslateHttpLoader(http);
 }
+
 // Third party libraries
 
 import { MaterialModule } from './shared/modules/material.module';
 
-// App modules/components
+//#region App modules/components
 import { ComponentsModule } from './shared/components/components.module';
 import { ContainersModule } from './shared/containers/containers.module';
 import { AppSandbox } from './app.sandox';
@@ -53,6 +65,7 @@ import {
   AuthGuardIsLogged,
   AuthGuardNotLogged
 } from './Auth/guards/auth.guard';
+//#endregion
 
 export const devModeModules: any[] = isDevMode()
   ? [
@@ -78,6 +91,8 @@ export const Components = [AppComponent];
     AppRoutingModule,
     MaterialModule,
     HttpClientModule,
+    ApolloModule,
+    HttpLinkModule,
     HttpModule,
     FormsModule,
     ReactiveFormsModule,
@@ -112,4 +127,35 @@ export const Components = [AppComponent];
   ],
   bootstrap: [AppComponent]
 })
-export class AppModule {}
+export class AppModule {
+  constructor(apollo: Apollo, httpLink: HttpLink) {
+    // Create an http link:
+    const http = httpLink.create({
+      uri: 'http://localhost:3000/api'
+    });
+
+    // Create a WebSocket link:
+    // const ws = new WebSocketLink({
+    //   uri: `ws://localhost:3000/subscriptions`,
+    //   options: {
+    //     reconnect: true
+    //   }
+    // });
+    const link = split(
+      // split based on operation type
+      ({ query }) => {
+        const { kind, operation } = getMainDefinition(query);
+        return kind === 'OperationDefinition' && operation === 'subscription';
+      },
+      // ws,
+      http
+    );
+
+    apollo.create({
+      // By default, this client will send queries to the
+      // `/graphql` endpoint on the same host
+      link,
+      cache: new InMemoryCache()
+    });
+  }
+}
